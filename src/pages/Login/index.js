@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./index.scss";
 
 const Login = () => {
   const [userName, setUserName] = useState("");
   const [userPassword, setuserPassword] = useState("");
-  const [useList, setUsersList] = useState([]);
+  const [showError, setShowError] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,7 +16,17 @@ const Login = () => {
         return response.json();
       })
       .then((data) => {
-        setUsersList(data);
+        data.map((product) => {
+          if (
+            product.username === userName &&
+            product.username === userPassword
+          ) {
+            navigate("/dashboard");
+            setShowError(false);
+          } else {
+            setShowError(true);
+          }
+        });
       });
   };
 
@@ -25,14 +37,14 @@ const Login = () => {
           <img src={require("../../images/intro.jpg")} alt="Intro" />
         </div>
         <div className="loginForm">
-          <div>
+          <div className="loginDetails">
             <div className="logoLogin">
               <img
                 src={require("../../images/logoIntro.jpg")}
                 alt="Login Logo"
               />
             </div>
-            <form action="">
+            <form action="" onSubmit={handleSubmit}>
               <div>
                 <p>
                   <input
@@ -54,10 +66,8 @@ const Login = () => {
                     placeholder="Password"
                   />
                 </p>
-                <div>
-                  <Link to="/dashboard">
-                    <button onClick={handleSubmit}>Log in</button>
-                  </Link>
+                <div className="loginButton">
+                  <button>Log in</button>
                 </div>
               </div>
             </form>
@@ -65,15 +75,19 @@ const Login = () => {
               <div className="loginElse">
                 <p>OR</p>
               </div>
-              <div>
-                <p>Log in with facebook</p>
+              <div className="fbLogin">
+                <Link>Log in with Facebook</Link>
               </div>
-              <p>
-                Sorry, your password was incorrect. Please double-check your
-                password.
-              </p>
-              <div>
-                <p>forgot password</p>
+              {showError ? (
+                <p className="errorMessage">
+                  Sorry, your password was incorrect. Please double-check your
+                  password.
+                </p>
+              ) : (
+                ""
+              )}
+              <div className="forgotPwd">
+                <Link>Forgot password?</Link>
               </div>
             </div>
           </div>
