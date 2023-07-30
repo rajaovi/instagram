@@ -49,10 +49,7 @@ const Login = () => {
           <div className="loginForm">
             <div className="loginDetails">
               <div className="logoLogin">
-                <img
-                  src={require("../../images/logoIntro.jpg")}
-                  alt="Login Logo"
-                />
+              <SpriteImage iconName="logoMain" />
               </div>
               <form action="" onSubmit={handleSubmit}>
                 <div>

@@ -1,12 +1,33 @@
 .spriteImage {
-    display: inline-block;
-    background: url("../../images/sprite-icons.png");
-    background-repeat: no-repeat;
+  display: inline-block;
+  background: url("../../images/sprite-icons.png");
+  background-repeat: no-repeat;
 
-    &.facebook {
-        background-position: -412px -256px;
-        height: 20px;
-        vertical-align: text-bottom;
-        width: 20px;
-    }
+  &.facebook {
+    background-position: -412px -256px;
+    height: 20px;
+    vertical-align: text-bottom;
+    width: 20px;
+  }
+
+  &.logoMain {
+    background-position: 8px -126px;
+    height: 57px;
+    width: 186px;
+  }
+  &.appleApp {
+    background-position: -130px -182px;
+    height: 57px;
+    width: 86px;
+  }
+  &.googlePlayApp {
+    background-position: 2px -182px;
+    height: 42px;
+    width: 134px;
+  }
+  &.microsoftApp {
+    background-position: 2px -225px;
+    height: 43px;
+    width: 124px;
+  }
 }

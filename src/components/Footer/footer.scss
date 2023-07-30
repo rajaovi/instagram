@@ -3,7 +3,8 @@ footer {
   text-align: center;
 
   p,
-  a {
+  a,
+  select {
     color: #737373;
     font-family: "Open Sans", sans-serif;
     font-size: 12px;
@@ -39,6 +40,9 @@ footer {
       font-size: 12px;
       outline: none;
       max-width: 120px;
+      &:hover {
+        cursor: pointer;
+      } 
     }
   }
 }
