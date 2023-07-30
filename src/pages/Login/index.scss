@@ -19,34 +19,8 @@
             box-sizing: border-box;
             padding: 40px 40px 20px 40px;
             margin-bottom: 12px;
-    
-            input {
-                background-color: #fafafa;
-                border: 1px solid #dbdbdb;
-                box-sizing: border-box;
-                flex: 1 0 auto;
-                font: 12px 'Open Sans', sans-serif;
-                outline: none;
-                overflow: hidden;
-                padding: 9px 0 7px 8px;
-                text-overflow: ellipsis;
-                width: 100%;
-            }
-    
             .loginButton {
                 margin-top: 12px;
-    
-                button {
-                    background-color: #4cb5f9;
-                    border: 0;
-                    border-radius: 7px;
-                    color: #fff;
-                    font: 14px 'Open Sans', sans-serif;
-                    font-weight: 600;
-                    display: block;
-                    padding: 7px 0;
-                    width: 100%;
-                }
             }
         }
     

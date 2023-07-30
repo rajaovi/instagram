@@ -1,0 +1,18 @@
+button {
+    background-color: #4cb5f9;
+    border: 0;
+    border-radius: 7px;
+    color: #fff;
+    font: 14px 'Open Sans', sans-serif;
+    font-weight: 600;
+    padding: 7px 0;
+    width: 100%;
+
+    &.block {
+        display: block;
+    }
+
+    &.inlineBlock {
+        display: inline-block;
+    }
+}

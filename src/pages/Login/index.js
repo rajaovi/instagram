@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Button from "../../components/Button";
+import InputString from "../../components/Input/InputString";
+import Footer from "../../components/Footer";
 import "./index.scss";
 
 const Login = () => {
@@ -31,74 +34,73 @@ const Login = () => {
   };
 
   return (
-    <div className="loginPage">
-      <div className="loginArea container">
-        <div className="loginIntro">
-          <img src={require("../../images/intro.jpg")} alt="Intro" />
-        </div>
-        <div className="loginForm">
-          <div className="loginDetails">
-            <div className="logoLogin">
-              <img
-                src={require("../../images/logoIntro.jpg")}
-                alt="Login Logo"
-              />
-            </div>
-            <form action="" onSubmit={handleSubmit}>
+    <>
+      <div className="loginPage">
+        <div className="loginArea container">
+          <div className="loginIntro">
+            <img src={require("../../images/intro.jpg")} alt="Intro" />
+          </div>
+          <div className="loginForm">
+            <div className="loginDetails">
+              <div className="logoLogin">
+                <img
+                  src={require("../../images/logoIntro.jpg")}
+                  alt="Login Logo"
+                />
+              </div>
+              <form action="" onSubmit={handleSubmit}>
+                <div>
+                  <p>
+                    <InputString
+                      inputType="text"
+                      inputReqired={true}
+                      inputPlaceholder="Phone number, username, or email"
+                      onChangeInput={setUserName}
+                    />
+                  </p>
+                  <p>
+                    <InputString
+                      inputType="password"
+                      inputReqired={true}
+                      inputPlaceholder="Password"
+                      onChangeInput={setuserPassword}
+                    />
+                  </p>
+                  <div className="loginButton">
+                    <Button btnName="Log in" btnWidth="block" />
+                  </div>
+                </div>
+              </form>
               <div>
-                <p>
-                  <input
-                    type="text"
-                    value={userName}
-                    onChange={(e) => {
-                      setUserName(e.target.value);
-                    }}
-                    placeholder="Phone number, username, or email"
-                  />
-                </p>
-                <p>
-                  <input
-                    type="password"
-                    value={userPassword}
-                    onChange={(e) => {
-                      setuserPassword(e.target.value);
-                    }}
-                    placeholder="Password"
-                  />
-                </p>
-                <div className="loginButton">
-                  <button>Log in</button>
+                <div className="loginElse">
+                  <p>OR</p>
+                </div>
+                <div className="fbLogin">
+                  <Link>Log in with Facebook</Link>
+                </div>
+                {showError ? (
+                  <p className="errorMessage">
+                    Sorry, your password was incorrect. Please double-check your
+                    password.
+                  </p>
+                ) : (
+                  ""
+                )}
+                <div className="forgotPwd">
+                  <Link>Forgot password?</Link>
                 </div>
               </div>
-            </form>
-            <div>
-              <div className="loginElse">
-                <p>OR</p>
-              </div>
-              <div className="fbLogin">
-                <Link>Log in with Facebook</Link>
-              </div>
-              {showError ? (
-                <p className="errorMessage">
-                  Sorry, your password was incorrect. Please double-check your
-                  password.
-                </p>
-              ) : (
-                ""
-              )}
-              <div className="forgotPwd">
-                <Link>Forgot password?</Link>
-              </div>
             </div>
-          </div>
-          <div className="signUp">
-            <p>
-              Don't have an account? <Link to="/signup">Sign up</Link>
-            </p>
+            <div className="signUp">
+              <p>
+                Don't have an account? <Link to="/signup">Sign up</Link>
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 
