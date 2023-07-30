@@ -1,0 +1,12 @@
+.spriteImage {
+    display: inline-block;
+    background: url("../../images/sprite-icons.png");
+    background-repeat: no-repeat;
+
+    &.facebook {
+        background-position: -412px -256px;
+        height: 20px;
+        vertical-align: text-bottom;
+        width: 20px;
+    }
+}

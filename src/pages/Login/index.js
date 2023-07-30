@@ -6,6 +6,7 @@ import InputString from "../../components/Input/InputString";
 import Footer from "../../components/Footer";
 import ErrorMessage from "../../components/ErrorMessage";
 import axiosRes from "../../api/axiosRes";
+import SpriteImage from "../../components/SpriteImage";
 import "./index.scss";
 
 const Login = () => {
@@ -33,7 +34,6 @@ const Login = () => {
         });
       },
       (err) => {
-        //error
         alert("Error With the API");
       }
     );
@@ -82,7 +82,10 @@ const Login = () => {
                   <p>OR</p>
                 </div>
                 <div className="fbLogin">
-                  <Link>Log in with Facebook</Link>
+                  <Link>
+                    <SpriteImage iconName="facebook" />
+                    Log in with Facebook
+                  </Link>
                 </div>
                 {showError ? (
                   <ErrorMessage
