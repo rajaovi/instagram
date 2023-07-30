@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axiosRes from "../../api/axiosRes";
 import "./footer.scss";
 
 const Footer = () => {
+  const [countryList, upateCountyList] = useState([]);
+  useEffect(() => {
+    axiosRes(
+      "https://restcountries.com/v3.1/all",
+      (res) => {
+        upateCountyList(res.data);
+        console.log("Res", res.data);
+      },
+      (err) => {
+        //error
+        alert("Error With the API");
+      }
+    );
+  }, []);
+
   return (
     <footer>
       <nav>
@@ -54,7 +70,10 @@ const Footer = () => {
       <div className="copyright">
         <div className="langSelector">
           <select>
-            <option>English</option>
+            {countryList.map((data, index) => {
+              const languages = data.languages;
+              return <option key={index}>{data.name.common}</option>;
+            })}
           </select>
         </div>
         <div>

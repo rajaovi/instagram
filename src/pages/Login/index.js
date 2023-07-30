@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import InputString from "../../components/Input/InputString";
 import Footer from "../../components/Footer";
+import ErrorMessage from "../../components/ErrorMessage";
+import axiosRes from "../../api/axiosRes";
 import "./index.scss";
 
 const Login = () => {
@@ -14,11 +16,10 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
+    axiosRes(
+      "https://jsonplaceholder.typicode.com/users",
+      (res) => {
+        const data = res.data;
         data.map((product) => {
           if (
             product.username === userName &&
@@ -30,7 +31,12 @@ const Login = () => {
             setShowError(true);
           }
         });
-      });
+      },
+      (err) => {
+        //error
+        alert("Error With the API");
+      }
+    );
   };
 
   return (
@@ -79,10 +85,10 @@ const Login = () => {
                   <Link>Log in with Facebook</Link>
                 </div>
                 {showError ? (
-                  <p className="errorMessage">
-                    Sorry, your password was incorrect. Please double-check your
-                    password.
-                  </p>
+                  <ErrorMessage
+                    errorType="text"
+                    errorMessage="Sorry, your password was incorrect. Please double-check your password."
+                  />
                 ) : (
                   ""
                 )}
