@@ -21,7 +21,8 @@ const Login = () => {
       "https://jsonplaceholder.typicode.com/users",
       (res) => {
         const data = res.data;
-        data.map((product) => {
+        console.log("data", data);
+        data.forEach((product) => {
           if (
             product.username === userName &&
             product.username === userPassword
@@ -49,7 +50,7 @@ const Login = () => {
           <div className="loginForm">
             <div className="loginDetails">
               <div className="logoLogin">
-              <SpriteImage iconName="logoMain" />
+                <SpriteImage iconName="logoMain" />
               </div>
               <form action="" onSubmit={handleSubmit}>
                 <div>
@@ -70,7 +71,7 @@ const Login = () => {
                     />
                   </p>
                   <div className="loginButton">
-                    <Button btnName="Log in" btnWidth="block" />
+                    <Button btnName="Log in" btnWidth="block" btnDisable={false} />
                   </div>
                 </div>
               </form>

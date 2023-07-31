@@ -7,7 +7,10 @@ button {
     font-weight: 600;
     padding: 7px 0;
     width: 100%;
-
+    &:hover {
+        background-color: #41a4e6;
+        cursor: pointer;
+    }
     &.block {
         display: block;
     }
