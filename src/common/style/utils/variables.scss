@@ -3,4 +3,10 @@
     --nav-medium-width: 244px;
     --nav-wide-width: 335px;
     --ig-separator: 219, 219, 219;
+    //--ig-hover-overlay: 255, 255, 255, .1;
+    --ig-hover-overlay: 0, 0, 0, .05;
 }
+
+:root {
+    --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }

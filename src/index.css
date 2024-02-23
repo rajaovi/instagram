@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+@import './common/style/utils/fonts.scss';
+
 body {
+  box-sizing: border-box;
+  font-family: "system-ui";
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -14,8 +15,10 @@ h4,
 h5,
 h6,
 p,
-a {
-  font-family: 'Open Sans', sans-serif;
+a,
+span {
+  font-family: "system-ui";
+
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

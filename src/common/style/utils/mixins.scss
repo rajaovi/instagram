@@ -1,3 +1,10 @@
+// Font Size & Line Height
+@mixin font-size($size, $line-height) {
+    font-size: #{$size}px;
+    line-height: #{$line-height}px;
+}
+
+// Media Query Mixin
 @mixin mobile {
     @media (max-width: 599px) { @content; }
 }
@@ -14,5 +21,6 @@
 @mixin large-desktop {
     @media (min-width: 1920px)  { @content; }
 }
+
 
 

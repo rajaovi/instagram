@@ -77,7 +77,7 @@ const Footer = () => {
           </select>
         </div>
         <div>
-          <p>© {new Date().getFullYear()} Instagram from Meta</p>
+          <p>© {new Date().getFullYear()} INSTAGRAM FROM META</p>
         </div>
       </div>
     </footer>

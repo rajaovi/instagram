@@ -3,9 +3,11 @@
 .up-sidebar {
     background-color: utils.$white;
     border-right: 1px solid rgb(var(--ig-separator));
+    box-sizing: border-box;
     height: 100vh;
     padding: 8px 12px 20px 12px;
     position: fixed;
+    overflow: hidden;
     top: 0;
 
     @include utils.mobile {
@@ -31,6 +33,18 @@
     height: 92px;
     width: 100%;
     flex-shrink: 0;
+    .up-sidebar-content-logo-desktop {
+        display: block;
+        @include utils.mobile {
+            display: none;
+        }
+    }
+    .up-sidebar-content-logo-mobile {
+        display: none;
+        @include utils.mobile {
+            display: block;
+        }
+    }
 }
 .up-sidebar__content-logo-wrapper {
     height: 73px;
@@ -41,3 +55,38 @@
     align-items: center;
     justify-content: space-between;
 }
+.up-sidebar__content-menu {
+    flex-grow: .9;
+    width: 100%;   
+}
+.up-sidebar__content-menu-nav-list {
+    margin: 4px 0;
+    text-align: start;
+}
+.up-sidebar__content-menu-nav-link,
+.up-sidebar__content-thread,
+.up-sidebar__content-more {
+    align-items: center;
+    padding: 12px;
+    display: flex;
+    &:hover {
+        background-color: rgba(var(--ig-hover-overlay));
+        border-radius: 8px;
+    }
+    .material-icons {
+        font-size: 30px;
+    }
+    &.active {
+        .up-sidebar__content-menu-nav-link-text {
+            font-weight: 700;
+        }
+    }
+}
+.up-sidebar__content-menu-nav-link-text,
+.up-sidebar__content-thread-text,
+.up-sidebar__content-more-text {
+    @include utils.font-size(17,20);
+    color: utils.$black;
+    padding-left: 17px;
+}
+

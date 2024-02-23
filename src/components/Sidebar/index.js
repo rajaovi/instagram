@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import './_sideBar.scss';
 
 export default function Sidebar() {
@@ -7,10 +9,10 @@ export default function Sidebar() {
       <div className="up-sidebar__content">
         <div className="up-sidebar__content-logo">
           <div className="up-sidebar__content-logo-wrapper">
-            <a href="#">
+            <Link to="/home">
               <svg
                 aria-label="Instagram"
-                className="x1lliihq x1n2onr6 x5n08af"
+                className="up-sidebar-content-logo-desktop"
                 fill="black"
                 height="29"
                 role="img"
@@ -23,38 +25,78 @@ export default function Sidebar() {
                   fill="black"
                   fillRule="evenodd"></path>
               </svg>
-            </a>
+              <span className="up-sidebar-content-logo-mobile">
+                <span className="material-icons md-dark">offline_bolt</span>
+              </span>
+            </Link>
           </div>
         </div>
-        <nav>
-          <ul>
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">Search</a>
-            </li>
-            <li>
-              <a href="#">Explore</a>
-            </li>
-            <li>
-              <a href="#">Reels</a>
-            </li>
-            <li>
-              <a href="#">Message</a>
-            </li>
-            <li>
-              <a href="#">Notification</a>
-            </li>
-            <li>
-              <a href="#">Create</a>
-            </li>
-            <li>
-              <a href="#"></a>Profile
-            </li>
-          </ul>
-        </nav>
-        <div>Thread & Setting</div>
+        <div className="up-sidebar__content-menu">
+          <nav className="up-sidebar__content-menu-nav">
+            <ul>
+              <li className="up-sidebar__content-menu-nav-list">
+                <Link to="/home" className="up-sidebar__content-menu-nav-link active">
+                  <span className="material-icons md-dark">home</span>
+                  <span className="up-sidebar__content-menu-nav-link-text">Home</span>
+                </Link>
+              </li>
+              <li className="up-sidebar__content-menu-nav-list">
+                <Link to="/home" className="up-sidebar__content-menu-nav-link">
+                  <span className="material-icons md-dark">search</span>
+                  <span className="up-sidebar__content-menu-nav-link-text">Search</span>
+                </Link>
+              </li>
+              <li className="up-sidebar__content-menu-nav-list">
+                <Link to="/home" className="up-sidebar__content-menu-nav-link">
+                  <span className="material-icons md-dark">explore</span>
+                  <span className="up-sidebar__content-menu-nav-link-text">Explore</span>
+                </Link>
+              </li>
+              <li className="up-sidebar__content-menu-nav-list">
+                <Link to="/home" className="up-sidebar__content-menu-nav-link">
+                  <span className="material-icons md-dark">movie</span>
+                  <span className="up-sidebar__content-menu-nav-link-text">Reels</span>
+                </Link>
+              </li>
+              <li className="up-sidebar__content-menu-nav-list">
+                <Link to="/home" className="up-sidebar__content-menu-nav-link">
+                  <span className="material-icons md-dark">question_answer</span>
+                  <span className="up-sidebar__content-menu-nav-link-text">Message</span>
+                </Link>
+              </li>
+              <li className="up-sidebar__content-menu-nav-list">
+                <Link to="/home" className="up-sidebar__content-menu-nav-link">
+                  <span className="material-icons md-dark">favorite_border</span>
+                  <span className="up-sidebar__content-menu-nav-link-text">Notification</span>
+                </Link>
+              </li>
+              <li className="up-sidebar__content-menu-nav-list">
+                <Link to="/home" className="up-sidebar__content-menu-nav-link">
+                  <span className="material-icons md-dark">control_point</span>
+                  <span className="up-sidebar__content-menu-nav-link-text">Create</span>
+                </Link>
+              </li>
+              <li className="up-sidebar__content-menu-nav-list">
+                <Link to="/home" className="up-sidebar__content-menu-nav-link">
+                  <span className="material-icons md-dark">account_circle</span>
+                  <span className="up-sidebar__content-menu-nav-link-text">Profile</span>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div className="up-sidebar__content-thread-more">
+          <div className="up-sidebar__content-thread">
+            <span className="material-icons md-dark">gesture</span>
+            <Link className="up-sidebar__content-thread-text" to="https://www.threads.net/">
+              Threads
+            </Link>
+          </div>
+          <div className="up-sidebar__content-more">
+            <span className="material-icons md-dark">menu</span>
+            <span className="up-sidebar__content-more-text">More</span>
+          </div>
+        </div>
       </div>
     </div>
   );

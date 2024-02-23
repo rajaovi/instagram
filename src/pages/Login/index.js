@@ -24,7 +24,7 @@ const Login = () => {
         console.log('data', data);
         data.forEach((product) => {
           if (product.username === userName && product.username === userPassword) {
-            navigate('/dashboard');
+            navigate('/home');
             setShowError(false);
           } else {
             setShowError(true);
