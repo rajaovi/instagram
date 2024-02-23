@@ -1,5 +1,7 @@
+@use "../../common/style/utils.scss";
+
 button {
-    background-color: #4cb5f9;
+    background-color: utils.$button-blue;
     border: 0;
     border-radius: 7px;
     color: #fff;
@@ -8,7 +10,7 @@ button {
     padding: 7px 0;
     width: 100%;
     &:hover {
-        background-color: #41a4e6;
+        background-color: utils.$button-blue-hover;
         cursor: pointer;
     }
     &.block {

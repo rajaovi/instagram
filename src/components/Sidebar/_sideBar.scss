@@ -1,0 +1,43 @@
+@use "../../common/style/utils.scss";
+
+.up-sidebar {
+    background-color: utils.$white;
+    border-right: 1px solid rgb(var(--ig-separator));
+    height: 100vh;
+    padding: 8px 12px 20px 12px;
+    position: fixed;
+    top: 0;
+
+    @include utils.mobile {
+        width: var(--nav-narrow-width);
+    }
+
+    @include utils.desktop {
+        width: var(--nav-medium-width);
+    }
+
+    @include utils.large-desktop {
+        width: var(--nav-wide-width);
+    }
+}
+.up-sidebar__content {
+    align-items: flex-start;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 100dvh;
+}
+.up-sidebar__content-logo {
+    height: 92px;
+    width: 100%;
+    flex-shrink: 0;
+}
+.up-sidebar__content-logo-wrapper {
+    height: 73px;
+    width: 100%;
+    padding: 25px 12px 16px;
+    margin-bottom: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

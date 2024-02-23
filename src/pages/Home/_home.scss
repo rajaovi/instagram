@@ -1,0 +1,9 @@
+.up-home {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.up-home__home-feeds {
+    width: calc(100% - var(--nav-medium-width));
+    margin-left: auto;
+}
