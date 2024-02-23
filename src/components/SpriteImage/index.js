@@ -1,5 +1,5 @@
-import React from "react";
-import "./spriteImage.scss";
+import React from 'react';
+import './spriteImage.scss';
 
 const SpriteImage = ({ iconName }) => {
   return <i className={`spriteImage ${iconName}`}></i>;

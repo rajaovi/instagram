@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import axiosRes from "../../api/axiosRes";
-import "./footer.scss";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import axiosRes from '../../api/axiosRes';
+import './footer.scss';
 
 const Footer = () => {
   const [countryList, upateCountyList] = useState([]);
   useEffect(() => {
     axiosRes(
-      "https://restcountries.com/v3.1/all",
+      'https://restcountries.com/v3.1/all',
       (res) => {
         upateCountyList(res.data);
-        console.log("Res", res.data);
+        console.log('Res', res.data);
       },
       (err) => {
         //error
-        alert("Error With the API");
+        alert('Error With the API');
       }
     );
   }, []);

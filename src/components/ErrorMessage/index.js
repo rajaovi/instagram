@@ -1,5 +1,5 @@
-import React from "react";
-import "./errorMessage.scss";
+import React from 'react';
+import './errorMessage.scss';
 
 const ErrorMessage = ({ errorType, errorMessage }) => {
   return <p className="errorMessage">{errorMessage}</p>;

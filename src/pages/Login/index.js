@@ -1,33 +1,30 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-import Button from "../../components/Button";
-import InputString from "../../components/Input/InputString";
-import Footer from "../../components/Footer";
-import ErrorMessage from "../../components/ErrorMessage";
-import axiosRes from "../../api/axiosRes";
-import SpriteImage from "../../components/SpriteImage";
-import "./index.scss";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Button from '../../components/Button';
+import InputString from '../../components/Input/InputString';
+import Footer from '../../components/Footer';
+import ErrorMessage from '../../components/ErrorMessage';
+import axiosRes from '../../api/axiosRes';
+import SpriteImage from '../../components/SpriteImage';
+import './index.scss';
 
 const Login = () => {
-  const [userName, setUserName] = useState("");
-  const [userPassword, setuserPassword] = useState("");
+  const [userName, setUserName] = useState('');
+  const [userPassword, setuserPassword] = useState('');
   const [showError, setShowError] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axiosRes(
-      "https://jsonplaceholder.typicode.com/users",
+      'https://jsonplaceholder.typicode.com/users',
       (res) => {
         const data = res.data;
-        console.log("data", data);
+        console.log('data', data);
         data.forEach((product) => {
-          if (
-            product.username === userName &&
-            product.username === userPassword
-          ) {
-            navigate("/dashboard");
+          if (product.username === userName && product.username === userPassword) {
+            navigate('/dashboard');
             setShowError(false);
           } else {
             setShowError(true);
@@ -35,7 +32,7 @@ const Login = () => {
         });
       },
       (err) => {
-        alert("Error With the API");
+        alert('Error With the API');
       }
     );
   };
@@ -45,7 +42,7 @@ const Login = () => {
       <div className="loginPage">
         <div className="loginArea container">
           <div className="loginIntro">
-            <img src={require("../../images/intro.jpg")} alt="Intro" />
+            <img src={require('../../images/intro.jpg')} alt="Intro" />
           </div>
           <div className="loginForm">
             <div className="loginDetails">
@@ -91,7 +88,7 @@ const Login = () => {
                     errorMessage="Sorry, your password was incorrect. Please double-check your password."
                   />
                 ) : (
-                  ""
+                  ''
                 )}
                 <div className="forgotPwd">
                   <Link>Forgot password?</Link>
@@ -100,7 +97,7 @@ const Login = () => {
             </div>
             <div className="signUp">
               <p>
-                Don't have an account? <Link to="/signup">Sign up</Link>
+                Dont have an account? <Link to="/signup">Sign up</Link>
               </p>
             </div>
           </div>

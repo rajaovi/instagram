@@ -1,13 +1,8 @@
-import React, { useState } from "react";
-import "./inputString.scss";
+import React, { useState } from 'react';
+import './inputString.scss';
 
-const InputString = ({
-  inputType,
-  inputReqired,
-  inputPlaceholder,
-  onChangeInput,
-}) => {
-  const [inputValue, setInputValue] = useState("");
+const InputString = ({ inputType, inputReqired, inputPlaceholder, onChangeInput }) => {
+  const [inputValue, setInputValue] = useState('');
   const handleInput = (e) => {
     const inputVar = e.target.value;
     setInputValue(inputVar);
