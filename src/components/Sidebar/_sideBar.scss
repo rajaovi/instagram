@@ -89,4 +89,11 @@
     color: utils.$black;
     padding-left: 17px;
 }
-
+.up-sidebar__content-thread-more {
+    width: 100%;
+}
+.up-sidebar__content-more {
+    &:hover {
+        cursor: pointer;
+    }
+}
